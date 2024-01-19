@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>chai or code | DOM</title>
+</head>
+<body style="background-color: blanchedalmond; color: brown;">
+    <ul class="language">
+        <li>javascript</li>
+    </ul>
+    
+</body>
+<script>
+
+
+    // ya vala function optimize ni ha kyu ke hma treversing krna hoga es lea hm log nest function kra ga ..
+    function addLanguage(langName){
+        const li=document.createElement('li');
+        li.innerHTML=`${langName}`
+        document.querySelector('.language').
+        appendChild(li)
+    }
+    addLanguage('python')
+    addLanguage('typescript') 
+
+
+    ///-------////
+// ya vala function optimize ha ...
+
+    function addoptiLanguage(langName){
+        const li =document.createElement('li')
+        li.appendChild(document.createTextNode(langName))
+        document.querySelector('.language').appendChild(li)
+    }
+    addoptiLanguage('golang')
+
+    //edit change krna ka treka  value ko..
+
+    const secondLang =document.querySelector("li:nth-child(2)")
+    //console.log(secondLang).....es sa jo first time value provide ke hogi vo console ma show ho jya ge..
+   
+    // secondLang.innerHTML="akash" // (ya vali approach si ni ha because treverse krna hoga es lea new approach use kea ga ... )
+    //....//
+     const newLi = document.createElement('li')
+     // ya pr hm newLi.textContet or newLi.appendChild be use kr sakta ha 
+     newLi.textContent='MOJO';
+     secondLang.replaceWith(newLi)
+
+//edit 
+
+
+    </Script>
+</html>
