@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>chai or code </h1>
+    <button id ="stop">stop</button>
+</body>
+<script>
+const sayHitesh = function(){
+    console.log('hitersh');
+}
+
+ //setTimeout(sayHitesh,2000);
+// document.querySelector('h1').innerHTML="akash"
+
+  const changeText = ()=>{
+    document.querySelector('h1').innerHTML="best js series"
+  }
+  const changeMe = setTimeout(changeText,2000);
+///------
+  document.querySelector('#stop').
+  addEventListener('click' , function(){
+    clearTimeout(changeMe);
+    console.log('stoped')
+
+  })
+
+
+//------
+  //  setTimeout(function(){
+  //      console.log('hitesh');
+ //   },2000)  // va call back krta ha // esko hm handler be bol lata ha // timeout hma number ma melta ha  //  ya ak method or ya api ko be call krta ha // ya core function ni ha  ya browser ka throw melta ha  .. .. clearInterval and clearTimeout ya parts he  setInterval and setTimeout... 
+
+//----
+   // setInterval(function(){
+  //      console.log('hitesh');
+  //  },2000)
+
+// interval ma thoda sa time lata ha oska bade ma vo contionously us kam ko krta jya ga ... or setTimeout ma 1 bar he apka kam kr ka da ga ...
+/// hmna koi be kam krvana hota ha to vo time lata ha example:::->hitesh 2 min bade ma print krvana ha //
+</script>
+</html>

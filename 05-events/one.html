@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>htnml Events </title>
+</head>
+<body style ="background-color: #414141; color:aliceblue">
+    <h2>Amazing image</h2>
+    <div >
+        <ul id="images">
+            <li><img width="200px" id="photoshop" src="https://images.pexels.com/photos/3561339/pexels-photo-3561339.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt="photoshop"></li>
+            <li><img width="200px" id="japan" src="https://images.pexels.com/photos/3532553/pexels-photo-3532553.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt=""></li>
+            <li><img width="200px" id="river" src="https://images.pexels.com/photos/3532551/pexels-photo-3532551.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt=""></li>
+            <li><img width="200px" id="owl" src="https://images.pexels.com/photos/3532552/pexels-photo-3532552.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt="" ></li>
+            <li><img width="200px" id="prayer" src="https://images.pexels.com/photos/2522671/pexels-photo-2522671.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt=""></li>
+            <li><a style="color: aliceblue;" href="https://google.com" id="google">Google</a></li>
+        </ul>
+   </div>
+</body>
+<script>
+    
+    // document.getElementById('owl').onclick = function(){
+    //     alert("owl clicked")
+    // } /// less feature ab aya ni use hota ha 
+
+     // attachEvent()
+    // jQuery - on
+//->>>>> home work-<<<<<
+    // type, timestamp, defaultPrevented->:default behaviour ko rok sakta ha hm ...
+   
+    // target, toElement, srcElement, currentTarget,
+    // clientX, clientY, screenX, screenY
+    // altkey, ctrlkey, shiftkey, keyCode
+    // view ,window ke hight or width kya ha ,timestamp , image pr click kra to va circle create ho jya... ya vala question interview ma aya ga ....
+
+    // document.getElementById('images').addEventListener('click', function(e){
+        // alert("owl clicked again")
+    //     console.log("clicked inside the ul");
+    // }, false) // ya pr true or false hee  use hoga 
+
+    // document.getElementById('owl').addEventListener('click', function(e){
+    //     console.log("owl clicked");
+    //     e.stopPropagation() // es sa event bubble hokr upar ka ement pr ni gya ga or we can say that image vala ni chala ga...  ya sab kush console ma chalaya ga.... 
+    // }, false)    .... .->>> 3:45:00
+// event propogation ka do contest hota ha 1.. eventbubling(false)..   2->event capcturing(true)
+//----->>>>(((very important )))))false use kra ga to phala owl vala document.getElementById va chala ga(or andar  vala ) them image vala document .getElementById vala chala ga  
+// true vala ma false ka ulta hoga phala image vala the owl vala or we can say that phala bhar vala then andar vala 
+
+
+    /// event listener pr  interview ma question ata ha 
+    // document.getElementById('google').addEventListener('click',function(e){
+    //     e.preventDefault(); /// e.preventdefault ha google kr website pr ni lakr jya ga .. 
+    //     e.stopPropagation(); /// es sa bubbling ni hogi
+    //     console.log("google clicked");
+    // }, false )
+   
+
+//// --->>>>(very important))
+    /*document .querySelector("#images").addEventListener('click' ,function(e){
+        console.log(e.target.parentNode);////-->>target es leya use keya kyu ke -->>esma jb hm image  pr click kra ga to console ma  vo image ka link da dya ga  ... li v parent node ha ..
+        let removeIt =e.target.parentNode;
+        removeIt.remove(); //-->> li sa image remove kr da ga ..
+        // removeIt.parentNode.removeChild(removeIt) ///   -->>remove krna ka bhut treka ha       
+    }) */  
+    document.querySelector('#images').addEventListener('click', function(e){
+        console.log(e.target.tagName);
+       if (e.target.tagName === 'IMG') {
+           console.log(e.target.id);
+           let removeIt = e.target.parentNode
+           removeIt.remove()
+       } // es sa agar hm ul  pr click kra ga to all image delete ni hogi..
+
+        
+    })
+    
+    //removeIt.parentNode.removeChild(removeIt)
+</script>
+</html>
+
+
+
+// //set time out : va hma node api ka andar melta ha  krna for asynous next video
+// web api for next video 
+//web api jo kam esko deya jata ha vo ya yad krva ha 
