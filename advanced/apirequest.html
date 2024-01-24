@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="background-color: lightpink;">
+0.	UNSENT	Client has been created. open() not called yet.
+1.	OPENED	open() has been called.
+2.	HEADERS_RECEIVED	send() has been called, and headers and status are available.
+3.	LOADING	Downloading; this.responseText holds partial data.
+4.	DONE	The operation is complete.
+</body>
+<script>
+    const requestUrl = 'https://api.github.com/users/hiteshchoudhary'
+    const xhr = new XMLHttpRequest();
+    xhr.open('GET', requestUrl)
+
+    //xhr.onreadystatechange = function() ye function se hi hoga learn karna padega..........iski vajah se hume pata chalega konsi state se hokar ja raha ha...jo body me likhi ha 0,1,2,3 and 4..........
+   xhr.onreadystatechange = function(){
+    console.log(xhr.readyState);//2,3,4
+
+    if(xhr.readyState === 4){//........................IMPORTANT HA .........................
+       data = JSON.parse(this.responseText);
+        console.log(data);
+
+
+        console.log(typeof data)// data ka type string tha...json.parse karne ke baad vo object me convert ho gya ha... 
+
+        //this.responsetext ek property ha jiski vajah se hmara link khulega....https://api.github.com/users/hiteshchoudhary...ye wala link khul jayega......
+
+      
+
+
+
+        // ab hum isko json me convert karenge with the help of json.parse...upar kar diya ha..iski vajah se object me convert ho jayega 
+
+
+
+ 
+// agar hum followers nikalna chahte ha to...
+
+
+console.log(data.followers);
+
+
+
+
+    }
+   }
+    xhr.send();
+</script>
+</html>
+
+
+
+
+// https://github.com/v8/v8 timing -->5:25:00
+// mdn webdocs_ promise topic 
