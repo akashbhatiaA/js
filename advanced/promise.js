@@ -119,7 +119,7 @@ fetch('https://api.github.com/users/hiteshchoudhary')
 })
 .catch((error)=>console.log(error))
 
-
+// terminal ma hma phala ya show hoga then upar vala code shopw hoga 
 
 
 
